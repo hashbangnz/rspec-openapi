@@ -1,3 +1,7 @@
+## v0.3.7b
+
+* Add small changes to support Rails 4
+
 ## v0.3.7
 
 * Classify tag names and remove controller names from summary in Rails

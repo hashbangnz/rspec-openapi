@@ -11,6 +11,11 @@ Unlike such [existing gems](#links), rspec-openapi can generate OpenAPI specs fr
 Furthermore, rspec-openapi keeps manual modifications when it merges automated changes to OpenAPI specs
 in case we can't generate everything from request specs.
 
+## This fork
+
+This was forked so we could make the minor changes needed to support Rails 4. Please use the upstream version
+for Rails 5 and above.
+
 ## Installation
 
 Add this line to your application's Gemfile:

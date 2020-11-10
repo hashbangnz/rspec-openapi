@@ -128,6 +128,6 @@ class << RSpec::OpenAPI::SchemaBuilder = Object.new
   end
 
   def normalize_content_type(content_type)
-    content_type&.sub(/;.+\z/, '')
+    content_type&.to_s.sub(/;.+\z/, '')
   end
 end

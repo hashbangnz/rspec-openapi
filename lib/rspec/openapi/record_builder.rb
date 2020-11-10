@@ -27,7 +27,7 @@ class << RSpec::OpenAPI::RecordBuilder = Object.new
 
     response_body =
       begin
-        response.parsed_body
+        JSON.parse(response.body)
       rescue JSON::ParserError
         nil
       end
@@ -89,9 +89,10 @@ class << RSpec::OpenAPI::RecordBuilder = Object.new
   # workaround to get real request parameters
   # because ActionController::ParamsWrapper overwrites request_parameters
   def raw_request_params(request)
-    original = request.delete_header('action_dispatch.request.request_parameters')
+    original = request['action_dispatch.request.request_parameters']
+    request['action_dispatch.request.request_parameters'] = nil
     request.request_parameters
   ensure
-    request.set_header('action_dispatch.request.request_parameters', original)
+    request['action_dispatch.request.request_parameters'] = original
   end
 end

@@ -25,4 +25,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'actionpack'
   spec.add_dependency 'rspec'
+  spec.add_dependency 'rails', "~> 4.0"   # use upstream for Rails 5+
 end
